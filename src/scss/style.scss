@@ -1,0 +1,90 @@
+//Reset 
+html, body, div, span,  h1, h2, h3, h4, h5, h6, p, a, em, img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline; }
+
+$color-bg:#ececec;
+
+// Mixin
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+@mixin margin($left,$rigth,$top,$bottom) {
+     margin: $top $rigth $bottom $left;
+}
+
+body {
+    background-color: $color-bg;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.theme-1{
+    .container{
+        @include margin(100px,100px ,50px ,50px);         
+        .search-content{
+            display: flex;
+            flex-direction: column;
+            input{
+                line-height: 40px;
+                padding-left: 30px;
+                font-size: 15px;
+                
+            }
+        }
+        .row{
+            display: flex;
+            .basket{
+                width: 300px;
+                background: #fff;
+                padding: 10px;
+                margin-right: 45px;
+
+            }
+            .box{
+                display: flex;
+                align-items: center;
+                background: #fff;
+                margin-bottom: 10px;
+                padding: 20px;
+                .product-image{
+                    margin-right: 50px;
+                    img{
+                        max-width: 100px;
+                    }
+                }
+                .prod-info{
+                    align-items: center;
+                    display: flex;
+                    flex-direction: column;
+                    .product-name{
+                        font-size: 20px;
+                        line-height: 45px;
+                    }
+                    .product-price{
+                        line-height: 38px;
+                        font-size: 20px;
+                    }
+                    .add-basket{
+                        background: #ececec;
+                        padding: 10px;
+                        cursor: pointer;
+                        &:hover{
+                            background: #908787;
+                        }
+                    }
+                }
+            }
+            table{
+                tr{
+                   font-size: 13px;
+                    line-height: 40px
+                }
+            }
+        }
+    }
+}
